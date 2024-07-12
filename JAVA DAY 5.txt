@@ -1,0 +1,176 @@
+1.Square and Cube of a Number
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        double n = s.nextDouble();
+        System.out.println("Square: " + (n * n));
+        System.out.println("Cube: " + (n * n * n));
+    }
+}
+
+
+2.Nth Odd Number in N Odd Numbers
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        for (int i = 1, c = 0; c < n; i += 2, c++) {
+            System.out.print(i + " ");
+        }
+    }
+}
+
+
+
+3.Armstrong Number
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(), t = n, r, sum = 0;
+        while (t != 0) {
+            r = t % 10;
+            sum += r * r * r;
+            t /= 10;
+        }
+        if (sum == n) System.out.println("Armstrong number");
+        else System.out.println("Not an Armstrong number");
+    }
+}
+
+
+4.Sum of Digits
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(), sum = 0;
+        String num = s.next();
+        for (char c : num.toCharArray()) {
+            sum += Character.getNumericValue(c);
+        }
+        while (sum > 9) {
+            int t = sum;
+            sum = 0;
+            while (t != 0) {
+                sum += t % 10;
+                t /= 10;
+            }
+        }
+        System.out.println("Sum: " + sum);
+    }
+}
+
+
+5.Square Root of Perfect Square Number
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int sqrt = (int) Math.sqrt(n);
+        if (sqrt * sqrt == n) {
+            System.out.println("Square Root: " + sqrt + ", " + -sqrt);
+        } else {
+            System.out.println("Not a perfect square");
+        }
+    }
+}
+
+
+
+6.Check if Number is Power of Three
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        boolean isPowerOfThree = n > 0 && 1162261467 % n == 0;
+        System.out.println(isPowerOfThree);
+    }
+}
+
+7.Most Frequent Word
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String p = s.nextLine();
+        Set<String> b = new HashSet<>(Arrays.asList(s.nextLine().split(",")));
+        Map<String, Integer> wc = new HashMap<>();
+        for (String w : p.toLowerCase().split("\\W+")) {
+            if (!b.contains(w)) {
+                wc.put(w, wc.getOrDefault(w, 0) + 1);
+            }
+        }
+        String mf = Collections.max(wc.entrySet(), Map.Entry.comparingByValue()).getKey();
+        System.out.println(mf);
+    }
+}
+
+
+8.Duplicate Occurrence of Zero
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int[] a = Arrays.stream(s.nextLine().split(",")).mapToInt(Integer::parseInt).toArray();
+        int[] r = new int[a.length];
+        for (int i = 0, j = 0; i < a.length && j < r.length; i++, j++) {
+            r[j] = a[i];
+            if (a[i] == 0 && j + 1 < r.length) {
+                r[++j] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(r));
+    }
+}
+
+
+9.Missing Number in Array
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int[] a = Arrays.stream(s.nextLine().split(",")).mapToInt(Integer::parseInt).toArray();
+        int n = a.length;
+        int ts = n * (n + 1) / 2;
+        int sum = 0;
+        for (int x : a) {
+            sum += x;
+        }
+        System.out.println(ts - sum);
+    }
+}
+
+
+10.Subarray with Largest Sum
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int[] a = Arrays.stream(s.nextLine().split(",")).mapToInt(Integer::parseInt).toArray();
+        int ms = a[0], cs = a[0];
+        for (int i = 1; i < a.length; i++) {
+            cs = Math.max(a[i], cs + a[i]);
+            ms = Math.max(ms, cs);
+        }
+        System.out.println(ms);
+    }
+}
+
+
+
+
