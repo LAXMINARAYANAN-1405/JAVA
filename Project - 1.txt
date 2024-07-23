@@ -1,0 +1,58 @@
+Project 1: 
+1) 
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+2)
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+
+3)
+public class Main {
+    public static void main(String[] args) {
+        system.out.println("Hello, World!"); // This will cause a compilation error
+    }
+}
+
+4) 
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!") // This will cause a compilation error
+    }
+}
+
+
+Project 2:
+1) 
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(" XXXXX ");
+        System.out.println("X     X");
+        System.out.println("X  X  X");
+        System.out.println("X     X");
+        System.out.println("X  X  X");
+        System.out.println("X  X  X");
+        System.out.println("X     X");
+        System.out.println(" XXXXX ");
+    }
+}
+
+2)
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("  ****  ");
+        System.out.println(" *    * ");
+        System.out.println("*      *");
+        System.out.println("*  **  *");
+        System.out.println("*  **  *");
+        System.out.println("*      *");
+        System.out.println(" *    * ");
+        System.out.println("  ****  ");
+    }
+}
