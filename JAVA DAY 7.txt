@@ -1,0 +1,142 @@
+6.Salary pay
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the grade of the employee: ");
+        char g = sc.next().charAt(0);
+        System.out.print("Enter the employee salary: ");
+        double s = sc.nextDouble();
+        double b = 0;
+        if (g == 'A') b = s * 0.05;
+        else if (g == 'B') b = s * 0.10;
+        if (s < 10000) b += s * 0.02;
+        double t = s + b;
+        System.out.println("Salary=" + s);
+        System.out.println("Bonus=" + b);
+        System.out.println("Total to be paid:" + t);
+    }
+}
+
+
+
+
+
+
+7.First n perfect number
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of perfect numbers to display: ");
+        int n = sc.nextInt();
+        System.out.print("First " + n + " perfect numbers are: ");
+        int count = 0, num = 1;
+        while (count < n) {
+            int sum = 0;
+            for (int i = 1; i <= num / 2; i++) {
+                if (num % i == 0) sum += i;
+            }
+            if (sum == num) {
+                System.out.print(num + " ");
+                count++;
+            }
+            num++;
+        }
+        System.out.println();
+    }
+}
+
+
+
+
+
+
+8.Marks and grade of student
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the marks in python: ");
+        int p = sc.nextInt();
+        System.out.print("Enter the marks in c programming: ");
+        int c = sc.nextInt();
+        System.out.print("Enter the marks in Mathematics: ");
+        int m = sc.nextInt();
+        System.out.print("Enter the marks in Physics: ");
+        int phy = sc.nextInt();
+        int total = p + c + m + phy;
+        double agg = total / 4.0;
+        System.out.println("Total= " + total);
+        System.out.println("Aggregate = " + agg);
+        if (agg > 75) System.out.println("DISTINCTION");
+        else if (agg >= 60) System.out.println("FIRST DIVISION");
+        else if (agg >= 50) System.out.println("SECOND DIVISION");
+        else if (agg >= 40) System.out.println("THIRD DIVISION");
+        else System.out.println("FAIL");
+    }
+}
+
+
+
+
+
+9.Average of  positive and negative numbers
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int posSum = 0, posCount = 0, negSum = 0, negCount = 0;
+        while (true) {
+            System.out.print("Enter the number: ");
+            int num = sc.nextInt();
+            if (num == -1) break;
+            if (num >= 0) {
+                posSum += num;
+                posCount++;
+            } else {
+                negSum += num;
+                negCount++;
+            }
+        }
+        double posAvg = posCount > 0 ? (double) posSum / posCount : 0;
+        double negAvg = negCount > 0 ? (double) negSum / negCount : 0;
+        System.out.println("The average of negative numbers is: " + negAvg);
+        System.out.println("The average of positive numbers is : " + posAvg);
+    }
+}
+
+
+
+
+
+
+10.Count no of lowercase, uppercase and numbers before '*'
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int uc = 0, lc = 0, numCount = 0;
+        while (true) {
+            System.out.print("Enter any character: ");
+            char ch = sc.next().charAt(0);
+            if (ch == '*') break;
+            if (Character.isUpperCase(ch)) uc++;
+            else if (Character.isLowerCase(ch)) lc++;
+            else if (Character.isDigit(ch)) numCount++;
+        }
+        System.out.println("Total count of lower case:" + lc);
+        System.out.println("Total count of upper case:" + uc);
+        System.out.println("Total count of numbers =" + numCount);
+    }
+}
